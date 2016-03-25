@@ -4,7 +4,7 @@
 
 	
 	<target name="build" description="Tâche principale d'intégration continue"
-		depends="clean" />
+		depends="clean, phpunit" />
 
 	<target name="clean" description="Supprime et recrée les répertoires">
 		<delete dir="${basedir}/build/api" />
@@ -14,6 +14,18 @@
 		<mkdir dir="${basedir}/build/api" />
 		<mkdir dir="${basedir}/build/coverage" />
 		<mkdir dir="${basedir}/build/logs" />
+	</target>
+
+	<target name="phpunit"
+	        unless="phpunit.done"
+	        depends="clean"
+	        description="Run unit tests with PHPUnit">
+	 <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
+	  <arg value="--configuration"/>
+	  <arg path="${basedir}/Xml/phpunit.xml"/>
+	 </exec>
+
+	 <property name="phpunit.done" value="true"/>
 	</target>
 		
 </project>

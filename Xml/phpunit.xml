@@ -6,7 +6,7 @@
   </php>
 
   <testsuites>
-    <testsuite name="Calculator">
+    <testsuite name="Test5-0">
       <directory>../Tests</directory>
     </testsuite>
   </testsuites>
