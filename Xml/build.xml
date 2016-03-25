@@ -3,7 +3,7 @@
 	<property name="source" value="src" />
 
 	<target name="build" description="Tâche principale d'intégration continue"
-		depends="clean" />
+		depends="clean, phpunit" />
 
 	<target name="clean" description="Supprime et recrée les répertoires">
 		<delete dir="${project.basedir}/build/api" />
@@ -13,6 +13,11 @@
 		<mkdir dir="${project.basedir}/build/api" />
 		<mkdir dir="${project.basedir}/build/coverage" />
 		<mkdir dir="${project.basedir}/build/logs" />
+	</target>
+	
+	<target name="phpunit" description="Lance les test">
+		<exec logoutput="true" dir="${project.basedir}/${source}/Xml"
+			command="phpunit" escape="false" />
 	</target>
 		
 </project>
