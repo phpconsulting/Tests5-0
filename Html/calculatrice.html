@@ -1,0 +1,20 @@
+<form id="calcul">
+ <fieldset>
+  <legend>Calculatrice</legend>
+  <p>
+   <label for="num1">Opérande gauche</label>
+   <input id="num1" class="required" name="NUM1" size="5" value="" />
+   <select id="operation" name="OPERATION" size="1">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+   </select>
+   <label for="num2">Opérande droite</label>
+   <input id="num2" class="required" name="NUM2" size="5" value="" />
+   <input type="submit" value="Ok" />
+  </p>
+ </fieldset>
+ <div id="resultat"></div><!-- id="resultat" -->
+</form>
+<div id="error"></div>

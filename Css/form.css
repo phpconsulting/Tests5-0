@@ -1,0 +1,135 @@
+/* Formulaire */
+form 
+{
+margin: 0 auto;
+width: 20em;
+text-align: center;
+}
+
+fieldset 
+{
+border: 1px solid #738dc0;
+border-radius: 15px;
+padding: 0.5em;
+background-color: #fff;
+}
+
+legend 
+{
+background-color: #d0d6e9;
+color: #405c90;
+font-weight: bold;
+border: 1px solid #738dc0;
+border-radius: 15px;
+height: 1.5em;
+line-height: 1.5em;
+margin-left: 0.7em;
+padding: 0 0.7em;
+}
+
+form p 
+{
+margin: 0.5em auto;
+width: 20em;
+}
+
+label 
+{
+display: inline-block;
+width: 8em;
+padding-right: 0.7em;
+text-align: right;
+font-weight: bold;
+}
+
+label[for="photo"]
+{
+padding-right: 0;
+text-align: center;
+}
+
+#calcul label
+{
+display: none;
+}
+
+input
+{
+font-weight: bold;
+color: #405c90;
+}
+
+input[type="submit"], button
+{
+background-color: #d0d6e9;
+color: #000;
+border-radius: 5px;
+}
+
+input[type="submit"]:hover, button:hover
+{
+border-style: inset;
+}
+
+#resultat 
+{
+width: 20em;
+margin: 10px 0 0 -60px;
+text-align: center;
+font-size: 150%;
+font-weight: bold;
+}
+
+#error
+{
+position: absolute;
+top: 50%;
+left: 50%;
+display: none;
+border: 2px solid #738dc0;
+border-radius: 15px;
+background-color: #fee;
+padding: 10px;
+text-align: left;
+box-shadow: 8px 8px 8px #738dc0;
+}
+
+#error .label
+{
+padding-left: 10px;
+font-weight: bold;
+}
+
+.norequired
+{
+border: 1px solid #f00;
+box-shadow: 1px 1px 2px #f00;
+}
+
+#drop_photo
+{
+position: relative;
+width: 100px;
+height: 100px;
+border: 1px dashed #000;
+margin: 0 auto;
+}
+
+#photo
+{
+position: absolute;
+top: 0;
+left: 0;
+display: inline-block;
+width: 100px;
+height: 100px;
+opacity: 0;
+}
+
+p#erreur
+{
+background-color: #f00;
+color: #fff;
+font-weight: bold;
+padding: 5px;
+}

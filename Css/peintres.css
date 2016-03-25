@@ -1,0 +1,64 @@
+/* Peintres */
+table 
+{
+margin: 0 auto;
+}
+
+caption
+{
+font-size: 130%;
+margin-bottom: 5px;
+}
+
+th 
+{
+background-color: #a8c9c9;
+color: #000;
+height: 1.5em;
+font-size: 120%;
+}
+
+th,td 
+{
+border: 1px solid #000;
+padding: 2px 5px;
+}
+
+td
+{
+text-align: left;
+}
+
+td a
+{
+font-weight: bold;
+}
+
+tr:nth-child(even) 
+{
+background-color: #d0e9e9;
+}
+
+tr:nth-child(odd) 
+{
+background-color: #b7dadb;
+}
+
+tr:hover 
+{
+background-color: #adc2a7;
+}
+
+#admin
+{
+position: absolute;
+top: 0;
+right: 0;
+}
+
+#admin a
+{
+display: block;
+width: 10px;
+height: 10px;	
+}

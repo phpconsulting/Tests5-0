@@ -1,0 +1,25 @@
+<form id="peintre">
+ <fieldset>
+  <legend>Formulaire</legend>
+  <input id="id_peintre" type="hidden" name="ID_PEINTRE" value="" />
+  <p>
+   <label for="nom">Nom</label>
+   <input id="nom" class="required" name="NOM" value="" size="15" maxlength="50" />
+  </p>
+  <p>
+   <label for="prenom">Prénom</label>
+   <input id="prenom" class="required" name="PRENOM" value="" size="15" maxlength="50" />
+  </p>
+  <p>
+   <label for="photo">Photo</label>
+  </p>
+  <div id="drop_photo">
+    <img id="preview" src="../Img/image.png" alt="image" title="image" />
+    <input id="photo" type="file" name="PHOTO" />
+  </div><!-- id="drop_photo" -->
+  <p>
+   <input type="submit" value="Ok" />
+  </p>
+ </fieldset>
+</form>
+<div id="error"></div><!-- id="error" -->

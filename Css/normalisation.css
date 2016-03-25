@@ -1,0 +1,66 @@
+/* Normalisation */
+html,body,form,fieldset,legend,ul,ol,pre,h1,h2,h3,h4,h5,h6,p 
+{
+margin: 0;
+padding: 0;
+}
+
+html,h1,h2,h3,h4,h5,h6 
+{
+font-size: 100%;
+}
+
+ol,ul 
+{
+list-style: none;
+}
+
+table 
+{
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+fieldset,img 
+{
+border: 0;
+}
+
+caption,th 
+{
+text-align: center;
+font-weight: bold;
+}
+
+a 
+{
+color: #000;
+text-decoration: none;
+}
+
+input,select 
+{
+font-size: 100%;
+vertical-align: middle;
+}
+
+textearea,table,td 
+{
+word-wrap: break-word;
+white-space: pre-wrap;
+}
+
+.clear
+{
+clear: both;
+}
+
+.center 
+{
+text-align: center;
+}
+
+.required 
+{
+background-color: #fdd;
+}
