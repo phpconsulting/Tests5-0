@@ -28,7 +28,7 @@ require_once('../PHPUnit/Extensions/Selenium2TestCase.php');
 /**
  * class Selenium Test Case pour tester l'application Web Calculatrice
  */
-class SeleniumTest extends PHPUnit_Extensions_Selenium2TestCase
+class SeleniumPeintresTest extends PHPUnit_Extensions_Selenium2TestCase
 {
   private $img_tests;
     
@@ -485,4 +485,4 @@ class SeleniumTest extends PHPUnit_Extensions_Selenium2TestCase
     
   } // testDelete()
   
-} // SeleniumTest
+} // SeleniumPeintresTest
