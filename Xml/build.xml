@@ -19,7 +19,7 @@
 	        unless="phpunit.done"
 	        depends="clean"
 	        description="Run unit tests with PHPUnit">
-	 <exec executable="{phpunit}" resultproperty="result.phpunit" taskname="phpunit">
+	 <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
 	  <arg path="${basedir}/Xml/phpunit.xml"/>
 	 </exec>
 
