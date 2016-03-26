@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="TestJenkins" default="build" basedir="../.">
-	<property name="phpunit" location="C:/bin/phpunit" />
+	<property name="phpunit" value="phpunit" />
 
 	<target name="build" description="Tâche principale d'intégration continue"
 		depends="clean, phpunit" />
