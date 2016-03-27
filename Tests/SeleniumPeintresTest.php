@@ -17,12 +17,8 @@ define('PASSWORD', 'gulliver');
 define('URL_TESTS', 'http://localhost/MOOC-WEB2.0/Mooc/Tests/Exo/Tests5-0/Php/');
 
 // Récupération de la class CCalcul
-$file = 'C:\tmp\test.txt';
-$fd = fopen($file, 'w');
-$path = str_replace('Tests', 'Mod', realpath(dirname(__FILE__))) . '\\';
-$path = str_replace('Mod-', 'Tests-', $path);
-fwrite($fd, 'PATH = ' . $path . "\n");
-fclose($fd);
+$path = str_replace("Tests\\", "Mod\\", realpath(dirname(__FILE__))) . "\\";
+//$path = str_replace('Mod-', 'Tests-', $path);
 require_once ($path . 'MPeintres.mod.php');
 
 /**
