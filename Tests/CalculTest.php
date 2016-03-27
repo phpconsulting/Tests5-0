@@ -12,7 +12,7 @@ $path = str_replace('Inc', 'Class', realpath('../../Inc')) . '\\';
 $file = 'C:\tmp\test.txt';
 $fd = fopen($file, 'w');
 $path = str_replace('Tests', 'Class', realpath(dirname(__FILE__))) . '\\';
-$path = str_replace('Class_', 'Tests_', $path);
+$path = str_replace('Class-', 'Tests-', $path);
 fwrite($fd, 'PATH = ' . $path . "\n");
 fclose($fd);
  
