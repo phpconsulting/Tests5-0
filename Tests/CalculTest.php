@@ -11,9 +11,11 @@ $path = str_replace('Inc', 'Class', realpath('../../Inc')) . '\\';
 
 $file = 'C:\tmp\test.txt';
 $fd = fopen($file, 'w');
-fwrite($fd, 'REALPATH = ' . realpath('C:\\Program Files (x86)\\'));
+fwrite($fd, 'REALPATH = ' . realpath("C:\Program Files (x86)\Jenkins\jobs\Tests-Exo\workspace\Class\"));
 fwrite($fd, 'PATH = ' . $path);
 fclose($fd);
+    
+$path = 'C:\Program Files (x86)\Jenkins\jobs\Tests-Exo\workspace\Class\'Z;
 
 require_once ($path . 'CCalcul.class.php');
 
