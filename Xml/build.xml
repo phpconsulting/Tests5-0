@@ -19,9 +19,7 @@
 	        depends="clean"
 	        description="Run unit tests with PHPUnit">
 	 <exec executable="cmd">
-	  <arg value="/c"/>
-	  <arg value="phpunit.cmd"/>
-	  <arg path="${basedir}/Xml/phpunit.xml"/>
+	  <arg line="/c phpunit ${basedir}/Xml/phpunit.xml" />
 	 </exec>
 
 	 <property name="phpunit.done" value="true"/>
