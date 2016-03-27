@@ -7,7 +7,7 @@
  */
 
 // Récupération de TestCase.php
-require_once ('../PHPUnit/Framework/TestCase.php');
+//require_once ('../PHPUnit/Framework/TestCase.php');
 
 // Récupération de la class CCalcul
 require_once '../Class/CCalcul.class.php';

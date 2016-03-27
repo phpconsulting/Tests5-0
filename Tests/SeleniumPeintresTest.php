@@ -23,7 +23,7 @@ define('URL_TESTS', 'http://localhost/MOOC-WEB2.0/Mooc/Tests/Exo/Tests5-0/Php/')
 require_once('../Mod/MPeintres.mod.php');
 
 // Récupération de la classe SeleniumTestCase
-require_once('../PHPUnit/Extensions/Selenium2TestCase.php');
+//require_once('../PHPUnit/Extensions/Selenium2TestCase.php');
 
 /**
  * class Selenium Test Case pour tester l'application Web Calculatrice

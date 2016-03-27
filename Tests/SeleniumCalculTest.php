@@ -7,7 +7,7 @@
  */
 
 // Récupération de SeleniumTestCase.php
-require_once('../PHPUnit/Extensions/Selenium2TestCase.php');
+//require_once('../PHPUnit/Extensions/Selenium2TestCase.php');
 
 /**
  * class Selenium Test Case pour tester l'application Web Calculatrice
