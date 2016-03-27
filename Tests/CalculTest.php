@@ -6,9 +6,6 @@
  * @package Calcul4
  */
 
-// Récupération de TestCase.php
-//require_once ('../PHPUnit/Framework/TestCase.php');
-
 // Récupération de la class CCalcul
 $path = str_replace('Inc', 'Class', realpath('../Inc')) . '\\';
 require_once ($path . 'CCalcul.class.php');

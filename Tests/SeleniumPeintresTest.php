@@ -284,10 +284,15 @@ class SeleniumPeintresTest extends PHPUnit_Extensions_Selenium2TestCase
     // Soumission du formulaire
     $submit = $this->byCssSelector('input[type="submit"]');
     $submit->click();
+
+    $this->timeouts()->implicitWait(100);
     
     // Récupération du id_peintre
     $mpeintres = new MPeintres();
     $the_values = $mpeintres->SelectAll();
+    
+    $this->timeouts()->implicitWait(100);
+    
     foreach($the_values as $val)
     {
       if ('Dali' == $val['NOM'] && 'Salvador' == $val['PRENOM'])
@@ -319,6 +324,9 @@ class SeleniumPeintresTest extends PHPUnit_Extensions_Selenium2TestCase
     // Récupération du id_peintre
     $mpeintres = new MPeintres();
     $the_values = $mpeintres->SelectAll();
+
+    $this->timeouts()->implicitWait(100);
+    
     foreach($the_values as $val)
     {
       if ('Dali' == $val['NOM'] && 'Salvador' == $val['PRENOM'])
@@ -363,10 +371,15 @@ class SeleniumPeintresTest extends PHPUnit_Extensions_Selenium2TestCase
     // Soumission du formulaire
     $submit = $this->byCssSelector('input[type="submit"]');
     $submit->click();
-      
+
+    $this->timeouts()->implicitWait(100);
+    
     // Récupération du id_peintre
     $mpeintres = new MPeintres();
     $the_values = $mpeintres->SelectAll();
+    
+    $this->timeouts()->implicitWait(100);   
+    
     foreach($the_values as $val)
     {
       if ('Dali' == $val['NOM'] && 'Salvador' == $val['PRENOM'])
@@ -440,10 +453,15 @@ class SeleniumPeintresTest extends PHPUnit_Extensions_Selenium2TestCase
     // Soumission du formulaire
     $submit = $this->byCssSelector('input[type="submit"]');
     $submit->click();
-      
+
+    $this->timeouts()->implicitWait(100);
+    
    // Récupération du id_peintre
     $mpeintres = new MPeintres();
     $the_values = $mpeintres->SelectAll();
+    
+    $this->timeouts()->implicitWait(100);
+    
     foreach($the_values as $val)
     {
       if ('Salvador' == $val['NOM'] && 'Dali' == $val['PRENOM'])
