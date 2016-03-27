@@ -11,11 +11,7 @@ $path = str_replace('Inc', 'Class', realpath('../../Inc')) . '\\';
 
 $file = 'C:\tmp\test.txt';
 $fd = fopen($file, 'w');
-fwrite($fd, 'REALPATH = ' . realpath('C:/Program Files (x86)/Jenkins/jobs/Tests-Exo/workspace/Class/') . "\n");
-fwrite($fd, 'FILE = ' . __FILE__ . "\n");
-fwrite($fd, 'DIR = ' . dirname(__FILE__) . "\n");
-fwrite($fd, 'REALDIR = ' . realpath(dirname(__FILE__)) . "\n");
-$pattern = '\\Tests\\';
+$pattern = '\\\\Tests\\\\';
 $path = preg_replace($pattern, '\\Class\\', realpath(dirname(__FILE__))) . '\\';
 fwrite($fd, 'PATH = ' . $path . "\n");
 fclose($fd);
