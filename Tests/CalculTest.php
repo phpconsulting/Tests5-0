@@ -15,7 +15,7 @@ fwrite($fd, 'REALPATH = ' . realpath('C:/Program Files (x86)/Jenkins/jobs/Tests-
 fwrite($fd, 'FILE = ' . __FILE__ . "\n");
 fwrite($fd, 'DIR = ' . dirname(__FILE__) . "\n");
 fwrite($fd, 'REALDIR = ' . realpath(dirname(__FILE__)) . "\n");
-$path = str_replace('Tests', 'Class', realpath(dirname(__FILE__))) . '\\';
+$path = str_replace('Tests/', 'Class/', realpath(dirname(__FILE__))) . '\\';
 fwrite($fd, 'PATH = ' . $path . "\n");
 fclose($fd);
  
