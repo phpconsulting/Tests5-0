@@ -6,7 +6,7 @@
  * @package Calcul4
  */
 
-// Récupération de la class CCalcul
+// RÃ©cupÃ©ration de la class CCalcul
 $pattern = '/Tests$/';
 $path = preg_replace($pattern, 'Class', realpath(dirname(__FILE__))) . '\\';
 require_once ($path . 'CCalcul.class.php');

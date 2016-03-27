@@ -3,7 +3,7 @@
 	<property name="phpunit" value="phpunit" />
 
 	<target name="build" description="Tâche principale d'intégration continue"
-		depends="clean, phpunit" />
+		depends="clean, phpunit, phpmd" />
 
 	<target name="clean" description="Supprime et recrée les répertoires">
 		<delete dir="${basedir}/build/api" />
@@ -21,7 +21,12 @@
 	 <exec executable="cmd">
 	  <arg line="/c phpunit -c '${basedir}/Xml/phpunit.xml'" />
 	 </exec>
-
+	</target>
+		
+	<target name="phpmd">
+	 <phpmd file="${project.basedir}/${source}">
+	  <formatter type="xml" outfile="${project.basedir}/build/phpmd.xml" />
+	 </phpmd>
 	</target>
 		
 </project>
