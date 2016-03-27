@@ -18,7 +18,7 @@
 	<target name="phpunit"
 	        depends="clean"
 	        description="Run unit tests with PHPUnit">
-	 <exec executable="cmd" resultproperty="result.phpunit" taskname="phpunit">
+	 <exec executable="cmd">
 	  <arg value="/c"/>
 	  <arg value="phpunit.cmd"/>
 	  <arg path="${basedir}/Xml/phpunit.xml"/>
