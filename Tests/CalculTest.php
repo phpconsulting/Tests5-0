@@ -11,7 +11,7 @@ $path = str_replace('Inc', 'Class', realpath('../../Inc')) . '\\';
 
 $file = 'C:\tmp\test.txt';
 $fd = fopen($file, 'w');
-fwrite($fd, 'REALPATH = ' . realpath('./../'));
+fwrite($fd, 'REALPATH = ' . realpath('C:\\Program Files (x86)\\'));
 fwrite($fd, 'PATH = ' . $path);
 fclose($fd);
 
