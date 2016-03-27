@@ -11,7 +11,7 @@ $path = str_replace('Inc', 'Class', realpath('../../Inc')) . '\\';
 
 $file = 'C:\tmp\test.txt';
 $fd = fopen($file, 'w');
-$pattern = '\\\\Tests\\\\';
+$pattern = '#\\Tests\\#';
 $path = preg_replace($pattern, '\\Class\\', realpath(dirname(__FILE__))) . '\\';
 fwrite($fd, 'PATH = ' . $path . "\n");
 fclose($fd);
