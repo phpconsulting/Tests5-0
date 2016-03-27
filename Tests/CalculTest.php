@@ -15,7 +15,7 @@ fwrite($fd, 'REALPATH = ' . realpath("C:\Program Files (x86)\Jenkins\jobs\Tests-
 fwrite($fd, 'PATH = ' . $path);
 fclose($fd);
     
-$path = 'C:\Program Files (x86)\Jenkins\jobs\Tests-Exo\workspace\Class\'Z;
+$path = 'C:\Program Files (x86)\Jenkins\jobs\Tests-Exo\workspace\Class\';
 
 require_once ($path . 'CCalcul.class.php');
 
