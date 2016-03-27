@@ -11,12 +11,12 @@ $path = str_replace('Inc', 'Class', realpath('../../Inc')) . '\\';
 
 $file = 'C:\tmp\test.txt';
 $fd = fopen($file, 'w');
-fwrite($fd, 'REALPATH = ' . realpath('C:/Program Files (x86)/Jenkins/jobs/Tests-Exo/workspace/Class/'));
-fwrite($fd, 'PATH = ' . $path);
-fwrite($fd, 'FILE = ' . __FILE__);
-fwrite($fd, 'DIR = ' . dirname(__FILE__));
-fwrite($fd, 'REALDIR = ' . realpath(dirname(__FILE__)));
-fclose($fd, 'PATH = ' . $path);
+fwrite($fd, 'REALPATH = ' . realpath('C:/Program Files (x86)/Jenkins/jobs/Tests-Exo/workspace/Class/') . "\n");
+fwrite($fd, 'PATH = ' . $path . "\n");
+fwrite($fd, 'FILE = ' . __FILE__ . "\n");
+fwrite($fd, 'DIR = ' . dirname(__FILE__) . "\n");
+fwrite($fd, 'REALDIR = ' . realpath(dirname(__FILE__)) . "\n");
+fclose($fd);
     
 $path = 'C:/Program Files (x86)/Jenkins/jobs/Tests-Exo/workspace/Class/';
 
