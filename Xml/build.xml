@@ -24,8 +24,8 @@
 	</target>
 		
 	<target name="phpmd">
-	 <phpmd file="${project.basedir}/${source}">
-	  <formatter type="xml" outfile="${project.basedir}/build/phpmd.xml" />
+	 <phpmd file="${basedir}">
+	  <formatter type="xml" outfile="${basedir}/build/phpmd.xml" />
 	 </phpmd>
 	</target>
 		
