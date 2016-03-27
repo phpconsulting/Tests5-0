@@ -7,8 +7,8 @@
  */
 
 // Récupération de la class CCalcul
-$path = str_replace('Tests', 'Class', realpath(dirname(__FILE__))) . '\\';
-$path = str_replace('Class-', 'Tests-', $path);
+$pattern = '/Tests$/';
+$path = preg_replace($pattern, 'Class', realpath(dirname(__FILE__))) . '\\';
 require_once ($path . 'CCalcul.class.php');
 
 /**

@@ -16,10 +16,9 @@ define('PASSWORD', 'gulliver');
 
 define('URL_TESTS', 'http://localhost/MOOC-WEB2.0/Mooc/Tests/Exo/Tests5-0/Php/');
 
-// Récupération de la class CCalcul
+// Récupération de la class MPeintres
 $pattern = '/Tests$/';
 $path = preg_replace($pattern, 'Mod', realpath(dirname(__FILE__))) . '\\';
-//$path = str_replace('Mod-', 'Tests-', $path);
 require_once ($path . 'MPeintres.mod.php');
 
 /**
