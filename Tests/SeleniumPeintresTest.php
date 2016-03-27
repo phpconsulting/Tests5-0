@@ -43,7 +43,7 @@ class SeleniumPeintresTest extends PHPUnit_Extensions_Selenium2TestCase
     $this->setBrowserUrl(URL_TESTS);
      
     // Chemin absolu des images de tests
-    $this->img_tests = realpath(dirname(__FILE__)) . '\\Img';
+    $this->img_tests = realpath(dirname(__FILE__)) . '\\Img\\';
 
   } // setUp()
   
