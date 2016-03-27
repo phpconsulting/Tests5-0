@@ -6,16 +6,9 @@
  * @package Calcul4
  */
 
-// RÃ©cupÃ©ration de la class CCalcul
-$path = str_replace('Inc', 'Class', realpath('../../Inc')) . '\\';
-
-$file = 'C:\tmp\test.txt';
-$fd = fopen($file, 'w');
+// Récupération de la class CCalcul
 $path = str_replace('Tests', 'Class', realpath(dirname(__FILE__))) . '\\';
 $path = str_replace('Class-', 'Tests-', $path);
-fwrite($fd, 'PATH = ' . $path . "\n");
-fclose($fd);
- 
 require_once ($path . 'CCalcul.class.php');
 
 /**
