@@ -9,7 +9,7 @@
 // Récupération de la class CCalcul
 $path = str_replace('Inc', 'Class', realpath('../Inc')) . '\\';
 
-$file = 'C:\Users\Desktop\test.txt';
+$file = 'C:\tmp\test.txt';
 $fd = fopen($file, 'w');
 fwrite($fd, 'PATH = ' . $path);
 fclose($fd);
