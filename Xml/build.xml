@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="TestJenkins" default="build" basedir="../.">
+	<property name="source" value="src" />
 	<property name="phpunit" value="phpunit" />
 
 	<target name="build" description="Tâche principale d'intégration continue"
@@ -19,12 +20,12 @@
 	        depends="clean"
 	        description="Run unit tests with PHPUnit">
 	 <exec executable="cmd">
-	  <arg line="/c phpunit -c '${basedir}/Xml/phpunit.xml'" />
+	  <arg line="/c phpunit -c '${basedir}/${source}/Xml/phpunit.xml'" />
 	 </exec>
 	</target>
 		
 	<target name="phpmd">
-	 <phpmd file="${basedir}">
+	 <phpmd file="${basedir}/${source}">
 	  <formatter type="xml" outfile="${basedir}/build/phpmd.xml" />
 	 </phpmd>
 	</target>
