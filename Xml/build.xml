@@ -16,7 +16,6 @@
 	</target>
 
 	<target name="phpunit"
-	        unless="phpunit.done"
 	        depends="clean"
 	        description="Run unit tests with PHPUnit">
 	 <exec executable="cmd" resultproperty="result.phpunit" taskname="phpunit">
