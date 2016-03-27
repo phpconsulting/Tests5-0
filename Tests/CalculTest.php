@@ -8,7 +8,7 @@
 
 // Récupération de la class CCalcul
 $path = str_replace('Inc', 'Class', realpath('../Inc')) . '\\';
-require_once ($path . 'CCalcul.class.php');
+require_once ('../Class/CCalcul.class.php');
 
 /**
  * class PHPUnit Test Case pour tester la class CCalcul
