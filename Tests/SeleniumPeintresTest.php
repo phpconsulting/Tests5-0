@@ -17,8 +17,12 @@ define('PASSWORD', 'gulliver');
 define('URL_TESTS', 'http://localhost/MOOC-WEB2.0/Mooc/Tests/Exo/Tests5-0/Php/');
 
 // Récupération de la class CCalcul
+$file = 'C:\tmp\test.txt';
+$fd = fopen($file, 'w');
 $path = str_replace('Tests', 'Mod', realpath(dirname(__FILE__))) . '\\';
 $path = str_replace('Mod-', 'Tests-', $path);
+fwrite($fd, 'PATH = ' . $path . "\n");
+fclose($fd);
 require_once ($path . 'MPeintres.mod.php');
 
 /**
@@ -39,10 +43,11 @@ class SeleniumPeintresTest extends PHPUnit_Extensions_Selenium2TestCase
     $this->setBrowserUrl(URL_TESTS);
     
     // Récupère le chemin absolu du répertoire Inc et le remplace par Tests
-    $path = str_replace('Inc', 'Tests', realpath('../Inc')) . '\\';
+    $path = str_replace('Tests', 'Img', realpath(dirname(__FILE__))) . '\\';
+    $path = str_replace('Img-', 'Tests-', $path);
     
     // Chemin absolu des images de tests
-    $this->img_tests = $path . 'Img\\';
+    $this->img_tests = $path;
 
   } // setUp()
   
