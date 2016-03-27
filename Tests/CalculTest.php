@@ -18,8 +18,7 @@ fwrite($fd, 'DIR = ' . dirname(__FILE__) . "\n");
 fwrite($fd, 'REALDIR = ' . realpath(dirname(__FILE__)) . "\n");
 fclose($fd);
     
-$path = 'C:/Program Files (x86)/Jenkins/jobs/Tests-Exo/workspace/Class/';
-
+$path = str_replace('Inc', 'Class', realpath(dirname(__FILE__))) . '\\';
 require_once ($path . 'CCalcul.class.php');
 
 /**
