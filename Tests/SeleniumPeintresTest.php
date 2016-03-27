@@ -41,13 +41,9 @@ class SeleniumPeintresTest extends PHPUnit_Extensions_Selenium2TestCase
     $this->setBrowser('firefox');
     // Url du répertoire de l'application à tester
     $this->setBrowserUrl(URL_TESTS);
-    
-    // Récupère le chemin absolu du répertoire Inc et le remplace par Tests
-    $path = str_replace('Tests', 'Img', realpath(dirname(__FILE__))) . '\\';
-    $path = str_replace('Img-', 'Tests-', $path);
-    
+     
     // Chemin absolu des images de tests
-    $this->img_tests = $path;
+    $this->img_tests = realpath(dirname(__FILE__)) . '\\Img';
 
   } // setUp()
   
