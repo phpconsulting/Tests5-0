@@ -8,12 +8,13 @@
 
 // Récupération de la class CCalcul
 $path = str_replace('Inc', 'Class', realpath('../Inc')) . '\\';
-require_once ($path . 'CCalcul.class.php');
 
 $file = 'C:\Users\Desktop\test.txt';
 $fd = fopen($file, 'w');
 fwrite($fd, 'PATH = ' . $path);
 fclose($fd);
+
+require_once ($path . 'CCalcul.class.php');
 
 /**
  * class PHPUnit Test Case pour tester la class CCalcul
