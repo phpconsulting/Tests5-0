@@ -7,9 +7,15 @@
  */
 
 // Récupération de la class CCalcul
-$path = str_replace('Inc', 'Class', realpath('../Inc')) . '\\';
+$path = str_replace('Inc', 'Class', realpath('..\Inc')) . '\\';
 
-require_once (realpath('.') . '\Tests5-0\Class\CCalcul.class.php');
+$file = 'C:\tmp\test.txt';
+$fd = fopen($file, 'w');
+fwrite($fd, 'REALPATH = ' . realpath('..\Inc'));
+fwrite($fd, 'PATH = ' . $path);
+fclose($fd);
+
+require_once ($path . 'CCalcul.class.php');
 
 /**
  * class PHPUnit Test Case pour tester la class CCalcul
