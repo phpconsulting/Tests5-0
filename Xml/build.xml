@@ -21,7 +21,7 @@
 	        description="Run unit tests with PHPUnit">
 	 <exec executable="cmd" resultproperty="result.phpunit" taskname="phpunit">
 	  <arg value="/c"/>
-	  <arg value="phpunit"/>
+	  <arg value="phpunit.cmd"/>
 	  <arg path="${basedir}/Xml/phpunit.xml"/>
 	 </exec>
 
