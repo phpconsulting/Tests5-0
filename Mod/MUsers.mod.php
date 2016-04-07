@@ -22,9 +22,15 @@ class MUsers
    */
   public function __construct()
   {
-    // Connexion Ã  la Base de DonnÃ©es
-    $this->conn = new PDO(DATABASE, LOGIN, PASSWORD);
- 
+    try
+    { 
+      $this->conn = new PDO(DATABASE, LOGIN, PASSWORD);
+    }
+    catch (PDOException $e)
+    {
+      echo 'Connexion échouée : ' . $e->getMessage();
+    }
+  
   } // __construct()
   
   /**
@@ -50,17 +56,17 @@ class MUsers
 	          from USERS
               where LOGIN = :LOGIN
               and PASSWORD = :PASSWORD';
- 
+
     $result = $this->conn->prepare($query);
 
     $result->bindValue(':LOGIN', $_value['LOGIN'], PDO::PARAM_STR);
     $result->bindValue(':PASSWORD', $_value['PASSWORD'], PDO::PARAM_STR);
         
     $result->execute();
-        
+
     return $result->fetch();  
   
   } // VerifUser($_value)
   
-} // MUserss
+} // MUsers
 ?>
