@@ -26,5 +26,11 @@
 	  <arg line="/c phpunit -c '${basedir}/Xml/phpunit.xml'" />
 	 </exec>
 	</target>
+	
+	<target name="phpmd">
+    	<phpmd file="${basedir}">
+        	<formatter type="xml" outfile="{basedir}/build/phpmd.xml" />
+    	</phpmd>
+	</target>
 		
 </project>
