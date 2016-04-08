@@ -74,7 +74,7 @@
     <modified />
    </fileset>
 
-   <fileset dir="${basedir}/tests">
+   <fileset dir="${basedir}/Tests">
     <include name="**/*.php" />
     <modified />
    </fileset>
@@ -89,7 +89,7 @@
   <exec executable="${phploc}" taskname="phploc">
    <arg value="--count-tests" />
    <arg path="${basedir}/src" />
-   <arg path="${basedir}/tests" />
+   <arg path="${basedir}/Tests" />
   </exec>
 
   <property name="phploc.done" value="true"/>
@@ -106,7 +106,7 @@
    <arg value="--log-xml" />
    <arg path="${basedir}/build/logs/phploc.xml" />
    <arg path="${basedir}/src" />
-   <arg path="${basedir}/tests" />
+   <arg path="${basedir}/Tests" />
   </exec>
 
   <property name="phploc.done" value="true"/>
@@ -161,7 +161,7 @@
    <arg value="--extensions=php" />
    <arg value="--ignore=autoload.php" />
    <arg path="${basedir}/src" />
-   <arg path="${basedir}/tests" />
+   <arg path="${basedir}/Tests" />
   </exec>
 
   <property name="phpcs.done" value="true"/>
@@ -178,7 +178,7 @@
    <arg value="--extensions=php" />
    <arg value="--ignore=autoload.php" />
    <arg path="${basedir}/src" />
-   <arg path="${basedir}/tests" />
+   <arg path="${basedir}/Tests" />
   </exec>
 
   <property name="phpcs.done" value="true"/>
@@ -210,7 +210,7 @@
  <target name="phpunit"
          unless="phpunit.done"
          depends="prepare"
-         description="Run unit tests with PHPUnit">
+         description="Run unit Tests with PHPUnit">
   <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
    <arg value="--configuration"/>
    <arg path="${basedir}/build/phpunit.xml"/>
