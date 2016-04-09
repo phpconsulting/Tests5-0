@@ -8,7 +8,7 @@
  <property name="phploc"  value="phploc"/>
  <property name="phpmd"   value="phpmd"/>
  <property name="phpunit" value="phpunit"/>
-
+ 
  <target name="printinfo">
   <property environment="env" />
   <echo message="env.$PATH"/>
