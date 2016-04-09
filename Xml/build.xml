@@ -111,7 +111,7 @@
    <arg line="/c phploc -count-tests '${basedir}//build/logs/phploc.csv'" />
   </exec>
  </target>
-
+ 
  <target name="phploc-ci"
          unless="phploc.done"
          depends="prepare"
