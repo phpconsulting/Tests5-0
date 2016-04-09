@@ -15,7 +15,7 @@
  </target>
 
  <target name="build1"
-         depends="printinfo,prepare,phpunit,phploc"
+         depends="printinfo,prepare,static-analysis,phpunit"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
  
  <target name="full-build"
@@ -31,6 +31,10 @@
          description="Performs a lint check and runs the tests (without generating code coverage reports)"/>
 
  <target name="static-analysis"
+         depends="lint,phploc-ci,pdepend"
+         description="Performs static analysis" />
+
+ <target name="static-analysis1"
          depends="lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci"
          description="Performs static analysis" />
 
@@ -104,15 +108,15 @@
   <property name="phploc.done" value="true"/>
  </target-->
 
- <target name="phploc"
+ <target name="phploc-ci"
 	     depends="prepare"
 	     description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phploc --count-tests '${basedir}//build/logs/phploc.csv' --log-csv ${basedir}/build/logs/phploc.xml ${basedir}/src ${basedir}/Tests" />
+   <arg line="/c phploc --count-tests '${basedir}//build/logs/phploc.csv' --log-csv '${basedir}/build/logs/phploc.xml ${basedir}/src ${basedir}/Tests'" />
   </exec>
  </target>
  
- <target name="phploc-ci"
+ <target name="phploc-ci1"
          unless="phploc.done"
          depends="prepare"
          description="Measure project size using PHPLOC and log result in CSV and XML format. Intended for usage within a continuous integration environment.">
@@ -130,6 +134,14 @@
  </target>
 
  <target name="pdepend"
+	     depends="prepare"
+	     description="Run unit tests with PHPUnit">
+  <exec executable="cmd">
+   <arg line="/c pdepend --jdepend-xml=${basedir}/build/logs/jdepend.xml --jdepend-chart=${basedir}/build/pdepend/dependencies.svg --overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
+  </exec>
+ </target>
+
+ <target name="pdepend1"
          unless="pdepend.done"
          depends="prepare"
          description="Calculate software metrics using PHP_Depend and log result in XML format. Intended for usage within a continuous integration environment.">
