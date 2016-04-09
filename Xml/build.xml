@@ -87,6 +87,26 @@
     <modified />
    </fileset>
 
+   <fileset dir="${basedir}/Mod">
+    <include name="**/*.php" />
+    <modified />
+   </fileset>
+
+   <fileset dir="${basedir}/View">
+    <include name="**/*.php" />
+    <modified />
+   </fileset>
+
+   <fileset dir="${basedir}/Class">
+    <include name="**/*.php" />
+    <modified />
+   </fileset>
+
+   <fileset dir="${basedir}/Inc">
+    <include name="**/*.php" />
+    <modified />
+   </fileset>
+
    <fileset dir="${basedir}/Tests">
     <include name="**/*.php" />
     <modified />
@@ -112,7 +132,7 @@
 	     depends="prepare"
 	     description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phploc --count-tests '${basedir}//build/logs/phploc.csv' --log-csv '${basedir}/build/logs/phploc.xml ${basedir}/Php ${basedir}/Tests'" />
+   <arg line="/c phploc --count-tests '${basedir}/build/logs/phploc.csv' --log-csv '${basedir}/build/logs/phploc.xml ${basedir}/Php ${basedir}/Tests'" />
   </exec>
  </target>
  
