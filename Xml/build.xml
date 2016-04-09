@@ -231,10 +231,10 @@
   <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
    <arg value="- -configuration"/>
    <arg path="${basedir}/build/phpunit.xml"/>
-  </exec -->
+  </exec>
 
   <property name="phpunit.done" value="true"/>
- </target>
+ </target -->
 
  <target name="phpunit-no-coverage"
          unless="phpunit.done"
