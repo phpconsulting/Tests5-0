@@ -108,7 +108,7 @@
 	     depends="prepare"
 	     description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phploc -count-tests '${basedir}//build/logs/phploc.csv'" />
+   <arg line="/c phploc --count-tests '${basedir}//build/logs/phploc.csv' --log-csv ${basedir}/build/logs/phploc.xml ${basedir}/src ${basedir}/Tests" />
   </exec>
  </target>
  
