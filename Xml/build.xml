@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="name-of-project" default="full-build" basedir="../.">
+<project name="name-of-project" default="build1" basedir="../.">
  <!-- By default, we assume all tools to be on the $PATH -->
  <property name="pdepend" value="pdepend"/>
  <property name="phpcpd"  value="phpcpd"/>
@@ -8,11 +8,15 @@
  <property name="phploc"  value="phploc"/>
  <property name="phpmd"   value="phpmd"/>
  <property name="phpunit" value="phpunit"/>
-
+ 
  <target name="printinfo">
   <property environment="env" />
-  <echo message="$PATH"/>
+  <echo message="env.$PATH"/>
  </target>
+ 
+ <target name="build1"
+         depends="printinfo,prepare,phpunit,phpdox,-check-failure"
+         description="Performs static analysis, runs the tests, and generates project documentation"/>
  
  <target name="full-build"
          depends="printinfo,prepare,static-analysis,phpunit,phpdox,-check-failure"
