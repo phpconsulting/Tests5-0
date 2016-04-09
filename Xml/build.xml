@@ -224,14 +224,14 @@
   </exec>
  </target>
 
- <!--target name="phpunit"
+ <!-- target name="phpunit"
          unless="phpunit.done"
          depends="prepare"
          description="Run unit Tests with PHPUnit">
   <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
-   <arg value="--configuration"/>
+   <arg value="- -configuration"/>
    <arg path="${basedir}/build/phpunit.xml"/>
-  </exec-->
+  </exec -->
 
   <property name="phpunit.done" value="true"/>
  </target>
