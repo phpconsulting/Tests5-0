@@ -11,7 +11,11 @@
 	
  <target name="printinfo">
   <property environment="env" />
+<<<<<<< HEAD
   <echo message="${env.PATH_TOOLS}"/>
+=======
+  <echo message="${env.JOB_NAME}"/>
+>>>>>>> d54fcdce8be8d60f3a73d1b212a6734a17ea94d0
  </target>
 
  <target name="full-build"
