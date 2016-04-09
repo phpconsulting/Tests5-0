@@ -11,7 +11,7 @@
 	
  <target name="printinfo">
   <property environment="env" />
-  <echo message="${env.PATH_TOOLS}"/>
+  <echo message="${env.JAVA_HOME}"/>
  </target>
 
  <target name="full-build"
