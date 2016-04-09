@@ -22,36 +22,17 @@
          depends="printinfo,prepare,static-analysis,phpunit,phpdox,-check-failure"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
 
- <target name="full-build-parallel"
-         depends="prepare,static-analysis-parallel,phpunit,phpdox,-check-failure"
-         description="Performs static analysis (executing the tools in parallel), runs the tests, and generates project documentation"/>
-
  <target name="quick-build"
          depends="prepare,lint,phpunit-no-coverage"
          description="Performs a lint check and runs the tests (without generating code coverage reports)"/>
 
  <target name="static-analysis"
-         depends="lint,phploc-ci,pdepend"
+         depends="lint,phploc-ci,pdepend,phpmd-ci"
          description="Performs static analysis" />
 
  <target name="static-analysis1"
          depends="lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci"
          description="Performs static analysis" />
-
- <!-- Adjust the threadCount attribute's value to the number of CPUs -->
- <target name="static-analysis-parallel"
-         description="Performs static analysis (executing the tools in parallel)">
-  <parallel threadCount="2">
-   <sequential>
-    <antcall target="pdepend"/>
-    <antcall target="phpmd-ci"/>
-   </sequential>
-   <antcall target="lint"/>
-   <antcall target="phpcpd-ci"/>
-   <antcall target="phpcs-ci"/>
-   <antcall target="phploc-ci"/>
-  </parallel>
- </target>
 
  <target name="clean"
          unless="clean.done"
@@ -82,11 +63,6 @@
   <apply executable="php" taskname="lint">
    <arg value="-l" />
 
-   <fileset dir="${basedir}/Php">
-    <include name="**/*.php" />
-    <modified />
-   </fileset>
-
    <fileset dir="${basedir}/Mod">
     <include name="**/*.php" />
     <modified />
@@ -103,6 +79,11 @@
    </fileset>
 
    <fileset dir="${basedir}/Inc">
+    <include name="**/*.php" />
+    <modified />
+   </fileset>
+
+   <fileset dir="${basedir}/Php">
     <include name="**/*.php" />
     <modified />
    </fileset>
@@ -132,7 +113,7 @@
 	     depends="prepare"
 	     description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phploc --count-tests  --log-csv '${basedir}/build/logs/phploc.csv' --log-xml '${basedir}/build/logs/phploc.xml ${basedir}/Php ${basedir}/Tests'" />
+   <arg line="/c phploc --count-tests --log-csv ${basedir}/build/logs/phploc.csv --log-xml ${basedir}/build/logs/phploc.xml ${basedir}/Php ${basedir}/Tests" />
   </exec>
  </target>
  
@@ -175,7 +156,7 @@
   <property name="pdepend.done" value="true"/>
  </target>
 
- <target name="phpmd"
+ <target name="phpmd1"
          unless="phpmd.done"
          description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
   <exec executable="${phpmd}" taskname="phpmd">
@@ -186,8 +167,16 @@
 
   <property name="phpmd.done" value="true"/>
  </target>
-
+ 
  <target name="phpmd-ci"
+	     depends="prepare"
+	     description="Run unit tests with PHPUnit">
+  <exec executable="cmd">
+   <arg line="/c phpmd ${basedir}/Php xml ${basedir}/build/phpmd.xml --reportfile ${basedir}/build/logs/pmd.xml" />
+  </exec>
+ </target>
+
+ <target name="phpmd-ci1"
          unless="phpmd.done"
          depends="prepare"
          description="Perform project mess detection using PHPMD and log result in XML format. Intended for usage within a continuous integration environment.">
