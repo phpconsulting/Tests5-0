@@ -15,7 +15,7 @@
  </target>
  
  <target name="build1"
-         depends="printinfo,prepare,phpunit,phploc,-check-failure"
+         depends="printinfo,prepare,phpunit,phploc"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
  
  <target name="full-build"
