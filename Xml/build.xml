@@ -8,9 +8,15 @@
  <property name="phploc"  value="phploc"/>
  <property name="phpmd"   value="phpmd"/>
  <property name="phpunit" value="phpunit"/>
+	
+ <target name="printinfo">
+  <property environment="env" />
+  <echo message="${env.PATH}"/>
+ </target>
+
 
  <target name="full-build"
-         depends="prepare,static-analysis,phpunit,phpdox,-check-failure"
+         depends="printinfo,prepare,static-analysis,phpunit,phpdox,-check-failure"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
 
  <target name="full-build-parallel"

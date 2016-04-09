@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="TestJenkins" default="build" basedir="../.">
+	<property name="phpunit" value="phpunit" />
+	<property name="phpmd" value="phpmd" />
+
+	<target name="build" description="Tâche principale d'intégration continue"
+		depends="clean, phpunit, phpmd" />
+
+	<target name="clean" description="Supprime et recrée les répertoires">
+		<delete dir="${basedir}/build/api" />
+		<delete dir="${basedir}/build/code-browser" />
+		<delete dir="${basedir}/build/coverage" />
+		<delete dir="${basedir}/build/logs" />
+		<delete dir="${basedir}/build/pdepend" />
+
+		<mkdir dir="${basedir}/build/api" />
+		<mkdir dir="${basedir}/build/code-browser" />
+		<mkdir dir="${basedir}/build/coverage" />
+		<mkdir dir="${basedir}/build/logs" />
+		<mkdir dir="${basedir}/build/pdepend" />
+	</target>
+
+	<target name="phpunit"
+	        depends="clean"
+	        description="Run unit tests with PHPUnit">
+	 <exec executable="cmd">
+	  <arg line="/c phpunit -c '${basedir}/Xml/phpunit.xml'" />
+	 </exec>
+	</target>
+	
+	<target name="phpmd"
+	         unless="phpmd.done"
+	         description="Evalue la qualité du code source PHP. Détecte les variables et les méthodes non-utilisées, les noms de variable trop court ou trop long et les méthodes trop complexes.">
+	  <exec executable="${phpmd}" taskname="phpmd">
+	   <arg path="${basedir}/src" />
+	   <arg value="text" />
+	   <arg path="${basedir}/build/phpmd.xml" />
+	  </exec>
+		
+      <property name="phpmd.done" value="true" />
+	</target>
+		
+</project>
