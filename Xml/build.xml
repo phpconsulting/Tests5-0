@@ -7,7 +7,7 @@
  <property name="phpdox"  value="phpdox"/>
  <property name="phploc"  value="phploc"/>
  <property name="phpmd"   value="phpmd"/>
- <property name="phpunit" value="C:\phpunit"/>
+ <property name="phpunit" value="phpunit"/>
  
  <target name="printinfo">
   <property environment="env" />
@@ -217,13 +217,21 @@
  </target>
 
  <target name="phpunit"
+	     depends="clean"
+	     description="Run unit tests with PHPUnit">
+  <exec executable="cmd">
+   <arg line="/c phpunit -c '${basedir}/Xml/phpunit.xml'" />
+  </exec>
+ </target>
+
+ <!--target name="phpunit"
          unless="phpunit.done"
          depends="prepare"
          description="Run unit Tests with PHPUnit">
   <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
    <arg value="--configuration"/>
    <arg path="${basedir}/build/phpunit.xml"/>
-  </exec>
+  </exec-->
 
   <property name="phpunit.done" value="true"/>
  </target>
