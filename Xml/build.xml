@@ -5,7 +5,7 @@
  <property name="phpcpd"  value="phpcpd"/>
  <property name="phpcs"   value="phpcs"/>
  <property name="phpdox"  value="phpdox"/>
- <property name="phploc"  value="phploc"/>
+ <property name="phploc"  value="C:\wamp\bin\php\php5.6.15\tests\vendor\bin\phploc"/>
  <property name="phpmd"   value="phpmd"/>
  <property name="phpunit" value="phpunit"/>
  
@@ -13,7 +13,7 @@
   <property environment="env" />
   <echo message="$PATH"/>
  </target>
-
+ 
  <target name="full-build"
          depends="printinfo,prepare,static-analysis,phpunit,phpdox,-check-failure"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
