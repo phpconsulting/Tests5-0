@@ -112,9 +112,6 @@
   </exec>
  </target>
 
-  <property name="phploc.done" value="true"/>
- </target>
-
  <target name="phploc-ci"
          unless="phploc.done"
          depends="prepare"
