@@ -75,7 +75,7 @@
   <mkdir dir="${basedir}/build/phpdox"/>
   <property name="prepare.done" value="true"/>
  </target>
-
+ 
  <target name="lint"
          unless="lint.done"
          description="Perform syntax check of sourcecode files">
