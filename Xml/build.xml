@@ -14,7 +14,6 @@
   <echo message="${env.PATH_TOOLS}"/>
  </target>
 
-
  <target name="full-build"
          depends="printinfo,prepare,static-analysis,phpunit,phpdox,-check-failure"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
