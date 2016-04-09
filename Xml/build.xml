@@ -15,7 +15,7 @@
  </target>
  
  <target name="build1"
-         depends="printinfo,prepare,phpunit,phpdox,-check-failure"
+         depends="printinfo,prepare,phpunit,phploc,-check-failure"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
  
  <target name="full-build"
@@ -92,14 +92,25 @@
   <property name="lint.done" value="true"/>
  </target>
 
- <target name="phploc"
+ <!--target name="phploc"
          unless="phploc.done"
          description="Measure project size using PHPLOC and print human readable output. Intended for usage on the command line.">
   <exec executable="${phploc}" taskname="phploc">
-   <arg value="--count-tests" />
+   <arg value="- -count-tests" />
    <arg path="${basedir}/src" />
    <arg path="${basedir}/Tests" />
   </exec>
+
+  <property name="phploc.done" value="true"/>
+ </target-->
+ 
+ <target name="phploc"
+	     depends="prepare"
+	     description="Run unit tests with PHPUnit">
+  <exec executable="cmd">
+   <arg line="/c phploc -count-tests '${basedir}//build/logs/phploc.csv'" />
+  </exec>
+ </target>
 
   <property name="phploc.done" value="true"/>
  </target>
