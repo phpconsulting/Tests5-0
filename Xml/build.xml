@@ -8,10 +8,10 @@
  <property name="phploc"  value="phploc"/>
  <property name="phpmd"   value="phpmd"/>
  <property name="phpunit" value="phpunit"/>
-
+ 
  <target name="printinfo">
   <property environment="env" />
-  <echo $PATH />
+  <echo message="$PATH"/>
  </target>
 
  <target name="full-build"
