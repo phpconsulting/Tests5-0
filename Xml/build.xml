@@ -15,7 +15,7 @@
  </target>
  
  <target name="build2"
-         depends="prepare,phpunit,phmd"
+         depends="prepare,phpunit,phpmd"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
 
  <target name="build1"
