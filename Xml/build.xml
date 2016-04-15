@@ -168,7 +168,7 @@
    <arg value="text" />
    <arg path="${basedir}/build/phpmd.xml" />
   </exec>
- 
+
   <property name="phpmd.done" value="true"/>
  </target>
 
