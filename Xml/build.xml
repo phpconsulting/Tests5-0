@@ -13,7 +13,7 @@
   <property environment="env" />
   <echo message="env.$PATH"/>
  </target>
- 
+
  <target name="build2"
          depends="prepare,phpunit,phpcs"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
