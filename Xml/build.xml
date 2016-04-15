@@ -168,7 +168,7 @@
    <arg value="text" />
    <arg path="${basedir}/build/phpmd.xml" />
   </exec>
-
+ 
   <property name="phpmd.done" value="true"/>
  </target>
 
@@ -176,7 +176,7 @@
 	     depends="prepare"
 	     description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpmd ${basedir}/Php xml ${basedir}/build/phpmd.xml" />
+   <arg line="/c phpmd ${basedir}/Php xml --reportfile ${basedir}/build/phpmd.xml" />
   </exec>
  </target>
 
