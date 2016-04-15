@@ -176,15 +176,23 @@
 	     depends="prepare"
 	     description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpmd ${basedir}/Php text ${basedir}/build/phpmd.xml" />
+   <arg line="/c phpmd ${basedir}/Php xml ${basedir}/build/phpmd.xml" />
   </exec>
  </target>
 
- <target name="phpmd-ci"
+ <!-- target name="phpmd-ci"
 	     depends="prepare"
 	     description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpmd ${basedir}/Php xml ${basedir}/build/phpmd.xml --reportfile ${basedir}/build/logs/pmd.xml" />
+   <arg line="/c phpmd ${basedir}/Php xml ${basedir}/build/phpmd.xml - -reportfile ${basedir}/build/logs/pmd.xml" />
+  </exec>
+ </target -->
+
+ <target name="phpmd-ci"
+		 depends="prepare"
+		 description="Run unit tests with PHPUnit">
+  <exec executable="cmd">
+   <arg line="/c phpmd ${basedir}/Php xml ${basedir}/build/phpmd.xml - -reportfile ${basedir}/build/logs/pmd.xml" />
   </exec>
  </target>
 
