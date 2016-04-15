@@ -15,7 +15,7 @@
  </target>
  
  <target name="build2"
-         depends="prepare,phpunit,phpmd"
+         depends="prepare,phpunit,phpcs"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
 
  <target name="build1"
@@ -212,6 +212,14 @@
  </target>
 
  <target name="phpcs"
+		 depends="prepare"
+		 description="Run unit tests with PHPUnit">
+  <exec executable="cmd">
+   <arg line="/c phcs ${basedir}/Php --report=checkstyle --report-file=${basedir}/build/logs/checkstyle.xml ${basedir}/Php ${basedir}/Tests" />
+  </exec>
+ </target>
+
+ <target name="phpcs2"
          unless="phpcs.done"
          description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
   <exec executable="${phpcs}" taskname="phpcs">
