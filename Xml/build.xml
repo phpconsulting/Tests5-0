@@ -179,7 +179,7 @@
    <arg line="/c phpmd Php Class View Mod Inc xml  --reportfile=build/phpmd.xml" />
   </exec>
  </target>
-
+ 
  <!-- target name="phpmd-ci"
 	     depends="prepare"
 	     description="Run unit tests with PHPUnit">
