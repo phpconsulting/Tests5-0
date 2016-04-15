@@ -15,7 +15,7 @@
  </target>
 
  <target name="build2"
-         depends="prepare,phpunit,phpcs"
+         depends="prepare,phpunit,phpmd, phpcs"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
 
  <target name="build1"
@@ -176,7 +176,7 @@
 	     depends="prepare"
 	     description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpmd ${basedir}/Php xml codesize --reportfile ${basedir}/build/phpmd.xml" />
+   <arg line="/c phpmd Php Class View Mod Inc xml  --reportfile build/phpmd.xml" />
   </exec>
  </target>
 
