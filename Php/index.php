@@ -22,7 +22,7 @@ switch($EX){
   case 'delete'     : modify('delete');  exit;
   default : home();
 }
- 
+
 require('../View/layout.view.php');
 
 function home()
