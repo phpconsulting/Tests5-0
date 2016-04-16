@@ -8,7 +8,8 @@ $EX = isset($_REQUEST['EX']) ? $_REQUEST['EX'] : 'home';
 
 if (isset($_SESSION['AUTORISATION']) && 'erreur' == $_SESSION['AUTORISATION']) session_destroy();
 
-switch($EX){
+switch($EX)
+{
   case 'home'       : home();            break;
   case 'admin'      : admin();           break;
   case 'connect'    : connect();         break;
