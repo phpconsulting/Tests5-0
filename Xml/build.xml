@@ -176,7 +176,7 @@
 	     depends="prepare"
 	     description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpmd Php xml --reportfile=build/phpmd.xml" />
+   <arg line="/c phpmd Php xml --reportfile build/phpmd.xml" />
   </exec>
  </target>
  
@@ -215,7 +215,7 @@
 		 depends="prepare"
 		 description="Run unit tests with PHPUnit">
    <exec executable="cmd">
-   <arg line="/c phpcs --report=checkstyle --report-file=build\logs\checkstyle.xml --standard=PSR2 --extensions=php Php Mod View Class Inc Tests" />
+   <arg line="/c phpcs --report=checkstyle --report-file=build\logs\checkstyle.xml --standard=MOOC --extensions=php Php Mod View Class Inc Tests" />
   </exec>
  </target>
  
