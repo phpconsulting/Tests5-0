@@ -277,7 +277,7 @@
 	     depends="clean"
 	     description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpunit -c '${basedir}/Xml/phpunit.xml' --junit  '${basedir}/build/logs/junit.xml'" />
+   <arg line="/c phpunit -c '${basedir}/Xml/phpunit.xml' --log-junit  '${basedir}/build/logs/junit.xml'" />
   </exec>
  </target>
 
