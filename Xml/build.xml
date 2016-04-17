@@ -85,7 +85,7 @@
 	     depends="prepare"
 	     description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpmd '${basedir}' xml --reportfile '${basedir}/build/phpmd.xml'" />
+   <arg line="/c phpmd '${basedir}' xml codesize --reportfile '${basedir}/build/phpmd.xml' --suffixes php" />
   </exec>
  </target>
 
