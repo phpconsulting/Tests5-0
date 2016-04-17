@@ -92,7 +92,7 @@ class CCalcul
    */
   private function subtract()
   {
-    return $this->a - $this->b;
+    return $this->a * $this->b;
 
   } // subtract()
 
