@@ -15,7 +15,7 @@
  </target>
 
  <target name="build"
-         depends="prepare,phpunit,phpmd, phpcs"
+         depends="prepare,phpunit,phpmd, phpcs, pdepend"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
 
  <target name="clean"
@@ -94,6 +94,14 @@
 		 description="Run unit tests with PHPUnit">
    <exec executable="cmd">
    <arg line="/c phpcs --report=checkstyle --report-file='${basedir}/build\logs\checkstyle.xml' --standard=MOOC --extensions=php '${basedir}/Php' '${basedir}/Mod' '${basedir}/View' '${basedir}/Class' '${basedir}/Inc' '${basedir}/Tests'" />
+  </exec>
+ </target>
+	
+ <target name="pdepend"
+		 depends="prepare"
+		 description="Run unit tests with PHPUnit">
+  <exec executable="cmd">
+   <arg line="/c pdepend --jdepend-xml='${basedir}/build/logs/jdepend.xml' --jdepend-chart='${basedir}/build/pdepend/dependencies.svg' --overview-pyramid='${basedir}/build/pdepend/overview-pyramid.svg'" />
   </exec>
  </target>
 
