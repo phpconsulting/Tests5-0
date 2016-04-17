@@ -102,6 +102,8 @@ function peintres()
   $content['method'] = (isset($_SESSION['ADMIN']) && $_SESSION['ADMIN']) ? 'showAdminPeintres' : 'showPeintres';
   $content['arg'] = '';
   
+  $ceciestunevariableextremementlongue = $data_peintres;
+  
 } // peintres()
 
 function res_calcul()
