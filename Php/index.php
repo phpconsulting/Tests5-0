@@ -51,30 +51,30 @@ function admin()
 
 function connect()
 {
-    $musers = new MUsers();
-    $value = $musers->VerifUser($_POST);
+  $musers = new MUsers();
+  $value = $musers->VerifUser($_POST);
     
-    if ($value['AUTORISATION'])
-    {
-      $_SESSION['AUTORISATION'] = $value['AUTORISATION'];
-      $_SESSION['ADMIN'] = true;
+  if ($value['AUTORISATION'])
+  {
+    $_SESSION['AUTORISATION'] = $value['AUTORISATION'];
+    $_SESSION['ADMIN'] = true;
     
-      peintres();
-    }
-    else
-    {
-      $_SESSION['AUTORISATION'] = 'erreur';
+    peintres();
+  }
+  else
+  {
+    $_SESSION['AUTORISATION'] = 'erreur';
       
-      admin();
-    }
+    admin();
+  }
 
 } // connect()
 
 function deconnect()
 {
-    session_destroy();
+  session_destroy();
 
-    header('Location: ../Php');
+  header('Location: ../Php');
 
 } // deconnect()
 

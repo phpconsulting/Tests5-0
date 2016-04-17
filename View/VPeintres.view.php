@@ -37,7 +37,7 @@ class VPeintres
 
   private function showTable()
   {
-       $this->vhtml->showHtml('../Html/table_peintres.html.php');
+    $this->vhtml->showHtml('../Html/table_peintres.html.php');
 
   } // showTable()
   

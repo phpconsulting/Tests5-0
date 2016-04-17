@@ -49,11 +49,11 @@ class VCalcul
    *
    * @return none
    */
-   public function ShowCalcul($_calcul)
-   {
-     echo "<p>{$_calcul['NUM1']} {$_calcul['OPERATION']} {$_calcul['NUM2']} = {$_calcul['RESULTAT']}</p>";
+  public function ShowCalcul($_calcul)
+  {
+    echo "<p>{$_calcul['NUM1']} {$_calcul['OPERATION']} {$_calcul['NUM2']} = {$_calcul['RESULTAT']}</p>";
 
-     return;
+    return;
 
   } // ShowCalcul($_calcul)
 
