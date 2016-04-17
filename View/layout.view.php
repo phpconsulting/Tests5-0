@@ -14,11 +14,11 @@ $vcontent = new $content['class']();
 <body>
 
  <nav>
-  <?php   $vnav->showNav() ?>
+  <?php $vnav->showNav() ?>
  </nav>
 
  <div id="content">
-  <?php   $vcontent->{$content['method']}($content['arg']) ?>
+  <?php $vcontent->{$content['method']}($content['arg']) ?>
  </div><!-- id="content" -->
  
  <script src="../Js/exo.js"></script>

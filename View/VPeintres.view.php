@@ -5,8 +5,8 @@ class VPeintres
   
   public function __construct()
   {
-  	$this->vhtml = new VHtml();
-  	
+    $this->vhtml = new VHtml();
+
   } // __construct()
   
   public function __destruct(){}
@@ -14,7 +14,7 @@ class VPeintres
   public function showPeintres()
   {
     $this->showTable();
-      
+ 
   } // showPeintres()
 
   public function showAdminPeintres()
@@ -32,13 +32,13 @@ class VPeintres
   private function showForm()
   {
     $this->vhtml->showHtml('../Html/form_peintres.html');
-  	 
+
   } // showForm()
 
   private function showTable()
   {
-  	$this->vhtml->showHtml('../Html/table_peintres.html.php');
-  	 
+      $this->vhtml->showHtml('../Html/table_peintres.html.php');
+
   } // showTable()
   
 } // VPeintres
