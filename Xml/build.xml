@@ -112,6 +112,14 @@
    <arg line="/c phpcpd --log-pmd='${basedir}/build/logs/pmd-cpd.xml' --exclude Css --exclude Html --exclude Img --exclude Js --exclude PHPUnit --exclude Tests --exclude Upload --exclude Xml '${basedir}'" />
   </exec>
  </target>
+	
+ <target name="phpcb"
+		 depends="prepare"
+		 description="Run unit tests with PHPUnit">
+  <exec executable="cmd">
+   <arg line="/c phpc --log '${basedir}/build/logs' --source '${basedir}' --output '${basedir/build/code-browser' --ignore=Css/,Html/,Imgs/,Js/,PHPUnit/,Tests/,Upload/,Xml/" />
+  </exec>
+ </target>
 
  <target name="phpunit"
 	     depends="clean"
