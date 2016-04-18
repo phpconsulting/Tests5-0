@@ -120,7 +120,7 @@
 		 depends="prepare"
 		 description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpcb --source='${basedir}' --output='${basedir/build/code-browser'" />
+   <arg line="/c phpcb --source '${basedir}' --output '${basedir/build/code-browser' --exclude Css --exclude Html --exclude Img --exclude Js --exclude PHPUnit --exclude Tests --exclude Upload --exclude Xml" />
   </exec>
  </target>
 
