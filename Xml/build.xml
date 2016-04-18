@@ -15,7 +15,7 @@
  </target>
 
  <target name="build"
-         depends="prepare,phpunit,phpmd, phpcs, pdepend"
+         depends="prepare,phpunit,phpmd,phpcs,pdepend,phpcpd"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
 
  <target name="clean"
@@ -102,6 +102,14 @@
 		 description="Run unit tests with PHPUnit">
   <exec executable="cmd">
    <arg line="/c pdepend --jdepend-xml='${basedir}/build/logs/jdepend.xml' --jdepend-chart='${basedir}/build/pdepend/dependencies.svg' --overview-pyramid='${basedir}/build/pdepend/overview-pyramid.svg' '${basedir}/Php,${basedir}/Mod,${basedir}/View,${basedir}/Class,${basedir}/Inc'" />
+  </exec>
+ </target>
+	
+ <target name="phpcpd"
+		 depends="prepare"
+		 description="Run unit tests with PHPUnit">
+  <exec executable="cmd">
+   <arg line="/c phpcpd --log-pmd='${basedir}/build/logs/pmd-cpd.xml' --suffixe php '${basedir}/Php,${basedir}/Mod,${basedir}/View,${basedir}/Class,${basedir}/Inc'" />
   </exec>
  </target>
 
