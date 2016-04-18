@@ -109,7 +109,7 @@
 		 depends="prepare"
 		 description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpcpd --log-pmd='${basedir}/build/logs/pmd-cpd.xml' --suffixes php '${basedir}/Php,${basedir}/Mod,${basedir}/View,${basedir}/Class,${basedir}/Inc'" />
+   <arg line="/c phpcpd --log-pmd='${basedir}/build/logs/pmd-cpd.xml' '${basedir}/Php,${basedir}/Mod,${basedir}/View,${basedir}/Class,${basedir}/Inc'" />
   </exec>
  </target>
 
