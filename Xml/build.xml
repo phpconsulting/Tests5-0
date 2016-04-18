@@ -27,6 +27,7 @@
   <delete dir="${basedir}/build/logs"/>
   <delete dir="${basedir}/build/pdepend"/>
   <delete dir="${basedir}/build/phpdox"/>
+  <delete dir="${basedir}/build/code-browser"/>
   <property name="clean.done" value="true"/>
  </target>
 
@@ -39,6 +40,7 @@
   <mkdir dir="${basedir}/build/logs"/>
   <mkdir dir="${basedir}/build/pdepend"/>
   <mkdir dir="${basedir}/build/phpdox"/>
+  <mkdir dir="${basedir}/build/code-browser"/>
   <property name="prepare.done" value="true"/>
  </target>
  
@@ -118,7 +120,7 @@
 		 depends="prepare"
 		 description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpcb --log='${basedir}/build/logs' --source='${basedir}' --output='${basedir/build/code-browser' --exclude=Css --exclude=Html --exclude=Img --exclude=Js --exclude=PHPUnit --exclude=Tests --exclude=Upload --exclude=Xml" />
+   <arg line="/c phpcb --log='${basedir}/build/logs' --source='${basedir}' --output='${basedir/build/code-browser'" />
   </exec>
  </target>
 
