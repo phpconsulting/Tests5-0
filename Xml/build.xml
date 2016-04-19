@@ -17,12 +17,12 @@
  <target name="clean"
          unless="clean.done"
          description="Cleanup build artifacts">
-  <delete dir="${basedir}/build/api"/>
-  <delete dir="${basedir}/build/coverage"/>
-  <delete dir="${basedir}/build/logs"/>
-  <delete dir="${basedir}/build/pdepend"/>
-  <delete dir="${basedir}/build/phpdox"/>
-  <delete dir="${basedir}/build/code-browser"/>
+  <delete dir="${basedir}/../build/api"/>
+  <delete dir="${basedir}/../build/coverage"/>
+  <delete dir="${basedir}/../build/logs"/>
+  <delete dir="${basedir}/../build/pdepend"/>
+  <delete dir="${basedir}/../build/phpdox"/>
+  <delete dir="${basedir}/../build/code-browser"/>
   <property name="clean.done" value="true"/>
  </target>
 
@@ -30,12 +30,12 @@
          unless="prepare.done"
          depends="clean"
          description="Prepare for build">
-  <mkdir dir="${basedir}/build/api"/>
-  <mkdir dir="${basedir}/build/coverage"/>
-  <mkdir dir="${basedir}/build/logs"/>
-  <mkdir dir="${basedir}/build/pdepend"/>
-  <mkdir dir="${basedir}/build/phpdox"/>
-  <mkdir dir="${basedir}/build/code-browser"/>
+  <mkdir dir="${basedir}/../build/api"/>
+  <mkdir dir="${basedir}/../build/coverage"/>
+  <mkdir dir="${basedir}/../build/logs"/>
+  <mkdir dir="${basedir}/../build/pdepend"/>
+  <mkdir dir="${basedir}/../build/phpdox"/>
+  <mkdir dir="${basedir}/../build/code-browser"/>
   <property name="prepare.done" value="true"/>
  </target>
  
@@ -83,7 +83,7 @@
 	     depends="prepare"
 	     description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpmd '${basedir}/Php,${basedir}/Mod,${basedir}/View,${basedir}/Class,${basedir}/Inc' xml naming --reportfile '${basedir}/build/phpmd.xml' --suffixes php" />
+   <arg line="/c phpmd '${basedir}/Php,${basedir}/Mod,${basedir}/View,${basedir}/Class,${basedir}/Inc' xml naming --reportfile '${basedir}/../build/phpmd.xml' --suffixes php" />
   </exec>
  </target>
 
@@ -91,7 +91,7 @@
 		 depends="prepare"
 		 description="Run unit tests with PHPUnit">
    <exec executable="cmd">
-   <arg line="/c phpcs --report=checkstyle --report-file='${basedir}/build\logs\checkstyle.xml' --standard=MOOC --extensions=php '${basedir}/Php' '${basedir}/Mod' '${basedir}/View' '${basedir}/Class' '${basedir}/Inc' '${basedir}/Tests'" />
+   <arg line="/c phpcs --report=checkstyle --report-file='${basedir}/../build\logs\checkstyle.xml' --standard=MOOC --extensions=php '${basedir}/Php' '${basedir}/Mod' '${basedir}/View' '${basedir}/Class' '${basedir}/Inc' '${basedir}/Tests'" />
   </exec>
  </target>
 	
@@ -99,7 +99,7 @@
 		 depends="prepare"
 		 description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c pdepend --jdepend-xml='${basedir}/build/logs/jdepend.xml' --jdepend-chart='${basedir}/build/pdepend/dependencies.svg' --overview-pyramid='${basedir}/build/pdepend/overview-pyramid.svg' '${basedir}/Php,${basedir}/Mod,${basedir}/View,${basedir}/Class,${basedir}/Inc'" />
+   <arg line="/c pdepend --jdepend-xml='${basedir}/../build/logs/jdepend.xml' --jdepend-chart='${basedir}/../build/pdepend/dependencies.svg' --overview-pyramid='${basedir}/../build/pdepend/overview-pyramid.svg' '${basedir}/Php,${basedir}/Mod,${basedir}/View,${basedir}/Class,${basedir}/Inc'" />
   </exec>
  </target>
 	
@@ -107,7 +107,7 @@
 		 depends="prepare"
 		 description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpcpd --log-pmd='${basedir}/build/logs/pmd-cpd.xml' --exclude Css --exclude Html --exclude Img --exclude Js --exclude PHPUnit --exclude Tests --exclude Upload --exclude Xml '${basedir}'" />
+   <arg line="/c phpcpd --log-pmd='${basedir}/../build/logs/pmd-cpd.xml' --exclude Css --exclude Html --exclude Img --exclude Js --exclude PHPUnit --exclude Tests --exclude Upload --exclude Xml '${basedir}'" />
   </exec>
  </target>
 	
@@ -115,7 +115,7 @@
 		 depends="prepare"
 		 description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpcb --source '${basedir}/Php' --source '${basedir}/Class' --source '${basedir}/Mod' --source '${basedir}/View' --source '${basedir}/Inc' --output '${basedir}/build/code-browser'" />
+   <arg line="/c phpcb --source '${basedir}/Php' --source '${basedir}/Class' --source '${basedir}/Mod' --source '${basedir}/View' --source '${basedir}/Inc' --output '${basedir}/../build/code-browser'" />
   </exec>
  </target>
 	
@@ -123,7 +123,7 @@
 		 depends="prepare"
 		 description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phploc --log-csv '${basedir}/build/logs/phploc.csv' --exclude Css --exclude Html --exclude Img --exclude Js --exclude PHPUnit --exclude Tests --exclude Upload --exclude Xml --count-tests '${basedir}/Tests'" />
+   <arg line="/c phploc --log-csv '${basedir}/../build/logs/phploc.csv' --exclude Css --exclude Html --exclude Img --exclude Js --exclude PHPUnit --exclude Tests --exclude Upload --exclude Xml --count-tests '${basedir}/Tests'" />
   </exec>
  </target>
 	
@@ -131,7 +131,7 @@
 		 depends="prepare"
 		 description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpdoc --directory='${basedir}/Php','${basedir}/Class','${basedir}/Mod','${basedir}/View','${basedir}/Inc' -t '${basedir}/build/api'" />
+   <arg line="/c phpdoc --directory='${basedir}/Php','${basedir}/Class','${basedir}/Mod','${basedir}/View','${basedir}/Inc' -t '${basedir}/../build/api'" />
   </exec>
  </target>
 
@@ -139,7 +139,7 @@
 	     depends="clean"
 	     description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpunit -c '${basedir}/Xml/phpunit.xml' --log-junit  '${basedir}/build/logs/junit.xml'" />
+   <arg line="/c phpunit -c '${basedir}/Xml/phpunit.xml' --log-junit  '${basedir}/../build/logs/junit.xml'" />
   </exec>
  </target>
 
