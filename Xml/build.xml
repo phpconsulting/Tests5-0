@@ -16,7 +16,7 @@
  </target>
 
  <target name="build"
-         depends="prepare,phpunit,phpmd,phpcs,pdepend,phpcpd,phpcb,phploc"
+         depends="prepare,phpunit,phpmd,phpcs,pdepend,phpcpd,phpcb,phploc,phpdoc"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
 
  <target name="clean"
@@ -129,6 +129,14 @@
 		 description="Run unit tests with PHPUnit">
   <exec executable="cmd">
    <arg line="/c phploc --log-csv '${basedir}/build/logs/phploc.csv' --exclude Css --exclude Html --exclude Img --exclude Js --exclude PHPUnit --exclude Tests --exclude Upload --exclude Xml --count-tests '${basedir}/Tests'" />
+  </exec>
+ </target>
+	
+ <target name="phpdoc"
+		 depends="prepare"
+		 description="Run unit tests with PHPUnit">
+  <exec executable="cmd">
+   <arg line="/c phpdoc -d '${basedir}' -t '${basedir}/build/api' --ignore Css,Html,Img,Js,PHPUnit,Tests,Upload,Xml" />
   </exec>
  </target>
 
