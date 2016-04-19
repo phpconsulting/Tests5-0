@@ -10,9 +10,9 @@
   </testsuites>
 
     <filter>
-        <whitelist>
-            <directory suffix=".php">../Php</directory>
-        </whitelist>
+     <whitelist>
+      <directory suffix=".php">../Php</directory>
+     </whitelist>
     </filter>
     
     <logging>
