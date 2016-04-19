@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="name-of-project" default="build" builddir="../../build" src="../.">
+<project name="name-of-project" default="build" basedir="../.">
  <!-- By default, we assume all tools to be on the $PATH -->
  <property name="pdepend" value="pdepend"/>
  <property name="phpcpd"  value="phpcpd"/>
@@ -7,39 +7,39 @@
  <property name="phpdox"  value="phpdox"/>
  <property name="phploc"  value="phploc"/>
  <property name="phpmd"   value="phpmd"/>
- <property name="phpcb"   value="phpcb"/>
+ <property name="phpdoc"  value="phpdoc"/>
  <property name="phpunit" value="phpunit"/>
  
- <target name="printinfo">
-  <property environment="env" />
-  <echo message="env.$PATH"/>
- </target>
+<!-- depends="prepare,phpunit,phpmd,phpcs,pdepend,phpcpd,phpcb,phploc,phpdoc" -->
 	
-<!--depends="prepare,phpunit,phpmd,phpcs,pdepend,phpcpd,phpcb,phploc,phpdoc"-->
-
+	
  <target name="build"
          depends="prepare"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
 
  <target name="clean"
-          description="Cleanup build artifacts">
-  <delete dir="${builddir}/api"/>
-  <delete dir="${builddir}/coverage"/>
-  <delete dir="${builddir}/logs"/>
-  <delete dir="${builddir}/pdepend"/>
-  <delete dir="${builddir}/phpdox"/>
-  <delete dir="${builddir}/code-browser"/>
-  </target>
+         unless="clean.done"
+         description="Cleanup build artifacts">
+  <delete dir="${basedir}/../build/api"/>
+  <delete dir="${basedir}/../build/coverage"/>
+  <delete dir="${basedir}/../build/logs"/>
+  <delete dir="${basedir}/../build/pdepend"/>
+  <delete dir="${basedir}/../build/phpdox"/>
+  <delete dir="${basedir}/../build/code-browser"/>
+  <property name="clean.done" value="true"/>
+ </target>
 
  <target name="prepare"
+         unless="prepare.done"
          depends="clean"
          description="Prepare for build">
-  <mkdir dir="${builddir}/api"/>
-  <mkdir dir="${builddir}/coverage"/>
-  <mkdir dir="${builddir}/logs"/>
-  <mkdir dir="${builddir}/pdepend"/>
-  <mkdir dir="${builddir}/phpdox"/>
-  <mkdir dir="${builddir}/code-browser"/>
+  <mkdir dir="${basedir}/../build/api"/>
+  <mkdir dir="${basedir}/../build/coverage"/>
+  <mkdir dir="${basedir}/../build/logs"/>
+  <mkdir dir="${basedir}/../build/pdepend"/>
+  <mkdir dir="${basedir}/../build/phpdox"/>
+  <mkdir dir="${basedir}/../build/code-browser"/>
+  <property name="prepare.done" value="true"/>
  </target>
  
  <target name="lint"
