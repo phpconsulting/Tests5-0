@@ -128,7 +128,7 @@
 		 depends="prepare"
 		 description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phploc --log-csv '${basedir}/build/logs/phploc.csv' --exclude Css --exclude Html --exclude Img --exclude Js --exclude PHPUnit --exclude Tests --exclude Upload --exclude Xml --suffixes php '${basedir}'" />
+   <arg line="/c phploc --log-csv '${basedir}/build/logs/phploc.csv' --exclude Css --exclude Html --exclude Img --exclude Js --exclude PHPUnit --exclude Tests --exclude Upload --exclude Xml --count-tests '${basedir}/Tests'" />
   </exec>
  </target>
 
