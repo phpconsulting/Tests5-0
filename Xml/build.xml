@@ -136,7 +136,7 @@
 		 depends="prepare"
 		 description="Run unit tests with PHPUnit">
   <exec executable="cmd">
-   <arg line="/c phpdoc -d '${basedir}/Php' '${basedir}/Class' '${basedir}/Mod' '${basedir}/View' '${basedir}/Inc' -t '${basedir}/build/api'" />
+   <arg line="/c phpdoc --directory='${basedir}/Php','${basedir}/Class','${basedir}/Mod','${basedir}/View','${basedir}/Inc' -t '${basedir}/build/api'" />
   </exec>
  </target>
 
